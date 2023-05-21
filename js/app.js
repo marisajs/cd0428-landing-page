@@ -13,50 +13,44 @@
  * 
 */
 
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
 
-/**
- * Define Global Variables
- * 
-*/
+// Build nav 
+const navBar = document.getElementById('navbar__list');
+const selectionList = document.querySelectorAll('section');
 
+let previous = document.getElementById('section1');
 
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
+// Build menu
+selectionList.forEach(x => {
+    navBar.innerHTML += `<li>${x.dataset.nav}</li>`;
+});
 
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
+//listens to scroll action
+navBar.querySelectorAll('li').forEach(x => x.addEventListener('click', clicked));
 
 // Scroll to section on link click
+function clicked(el) {
+// Prevent event from running repeatedly
+    el.preventDefault();
+    
+ // Remove class 'active' to section when near top of viewport  
+    previous.classList.toggle("live");
 
-// Set sections as active
+    const targetSection = el.target.innerText;
 
+    let selectedSection = null;
 
+    selectionList.forEach(x => {
+        if (x.dataset.nav == targetSection) {
+            selectedSection = x;
+        }
+    });
+    console.log(selectedSection);
+
+ // Add class 'active' to section when near top of viewport  
+    selectedSection.classList.toggle("live");
+    
+ // Scroll to anchor ID using scrollTO event   
+    selectedSection.scrollIntoView({behavior: "smooth"});
+    previous = selectedSection;
+}
