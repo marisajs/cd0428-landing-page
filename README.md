@@ -2,12 +2,32 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+- [Project-Description] (#Landing-Page-Project)
+- [Pages] (#pages)
+- [Instructions] (#instructions)
 
-## Instructions
+### Project Description
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+The project starter code included HTML and CSS styling for the Landing Page. The project goal was to turn this into an interactive website by building a navigation bar dynamicallly with JavaScript. This also involved scrolling to the specific section that was clicked on from the navigation bar.
 
-To get started, open `js/app.js` and start building out the app's functionality
+### Pages
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+- [js](js/apps.js)
+- [css](css/styles.css)
+- [index](index.html)
+- [LICENSE](LICENSE.txt)
+- [CODEOWNERS](CODEOWNERS)
+
+#### Instructions
+1. Start by linking your app.js.
+2. Build out your HTML and at least 4 content sections. 
+3. Build the navigation menu.
+4. Add functionality to distinguish the section in view.
+5. Add the functionality to scroll to sections.
+6. REFACTOR. 
+7. Add additional sections to your HTML document.  
+8. Test the performance. 
+9. Add an active state to your navigation items when a section is in the viewport.
+10. Responsive landing page:
+
+[(Back to top)](#table-of-contents)
