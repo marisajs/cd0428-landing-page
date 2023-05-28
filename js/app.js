@@ -24,7 +24,24 @@ let previous = document.getElementById('section1');
 selectionList.forEach(x => {
     navBar.innerHTML += `<li>${x.dataset.nav}</li>`;
 });
+// Code that still isn't working
+const sections = document.getElementsByClassName('menu__link');
 
+function makeActive() {
+  for (const section of sections) {
+    const box = section.getBoundingClientRect();
+    if (box.top <= 1 && box.bottom >= 806) {
+      section.classList.add("live")
+    } else {
+      section.classList.remove("live")}
+  }
+};
+
+document.addEventListener("scroll", function() {makeActive();
+});
+
+
+/* Previous code that is failing project requirements
 //listens to scroll action
 navBar.querySelectorAll('li').forEach(x => x.addEventListener('click', clicked));
 
@@ -54,3 +71,4 @@ function clicked(el) {
     selectedSection.scrollIntoView({behavior: "smooth"});
     previous = selectedSection;
 }
+*/
